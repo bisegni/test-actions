@@ -7,14 +7,11 @@ services:
       WAIT_HOSTS: kafka:9092
     working_dir: /opt
     volumes:
-      - ./shared:/opt
+      - /__w/test-actions/test-actions/shared:/opt
       #- ../test/test-conf-file.conf:/opt/test/test-conf-file.conf
     command: 
         - /bin/bash
         - -c
         - |
           ls -laR /opt
-          # export PATH=$PATH:/opt/
-          # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/local/lib:/opt/local/lib/linux-x86_64
-          # /opt/local/bin/wait
-          # /opt/local/bin/ekg-test
+          less /opt/
