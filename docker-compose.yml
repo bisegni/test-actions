@@ -3,7 +3,6 @@ version: '3.8'
 services:
   app:
     image: scr.svc.stanford.edu/eed-public/build-image/cpp-build-image/gcc-debian:12.2.0-bullseye
-    options: -v /__w/actions-test-repo/actions-test-repo/:/source:rw
     environment:
       WAIT_HOSTS: kafka:9092
     working_dir: /opt
