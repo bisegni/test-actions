@@ -7,8 +7,13 @@ services:
       WAIT_HOSTS: kafka:9092
     working_dir: /opt
     volumes:
-      - ./shaerd:/shared_1:rw
-      - /__w/test-actions/test-actions/shared:/shared_2:rw
+        - type: bind
+          source: .
+          target: /shared_1
+        - type: bind
+          source: /__w/test-actions/test-actions
+          target: /shaerd_2
+
       #- ../test/test-conf-file.conf:/opt/test/test-conf-file.conf
     command: 
         - /bin/bash
