@@ -7,11 +7,6 @@ services:
     environment:
       WAIT_HOSTS: kafka:9092
     working_dir: /opt
-    volumes:
-        - type: bind
-          source: ./shared
-          target: /shared_1
-
     command: 
         - /bin/bash
         - -c
