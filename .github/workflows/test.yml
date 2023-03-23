@@ -1,0 +1,18 @@
+name: Test EKG
+
+on:
+   push:
+jobs:
+    test_build:
+        runs-on: ubuntu-latest
+        container: docker:23.0.0-cli
+
+        steps:
+            - uses: actions/checkout@v3
+            - run: echo $PWD
+            - run: |
+                echo $USER
+                apk add curl
+                apk add wget
+                docker compose -f docker-compose.yml -f docker-compose-app.yml up --attach app --exit-code-from app
+            - run: ls -laR
