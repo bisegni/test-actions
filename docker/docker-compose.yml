@@ -4,6 +4,7 @@ services:
   app:
     build:
       context: ../
+      dockerfile: docker/Dockerfile
     environment:
       WAIT_HOSTS: kafka:9092
     working_dir: /opt
