@@ -2,7 +2,8 @@ version: '3.8'
 
 services:
   app:
-    image: ubuntu
+    build:
+      context: .
     environment:
       WAIT_HOSTS: kafka:9092
     working_dir: /opt
