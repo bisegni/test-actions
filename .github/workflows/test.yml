@@ -6,8 +6,6 @@ jobs:
     test_build:
         runs-on: ubuntu-latest
         container: docker
-
-
         steps:
             - uses: actions/checkout@v3
             - run: echo $PWD
