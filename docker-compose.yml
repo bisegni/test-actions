@@ -11,4 +11,4 @@ services:
         - /bin/bash
         - -c
         - |
-          ls -laR /shared_1
+          ls -laR /shared
