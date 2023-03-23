@@ -11,5 +11,5 @@ jobs:
             - run: echo $PWD
             - run: |
                 ls -la /__w/test-actions/test-actions/
-                docker-compose -f docker/docker-compose.yml run --rm app
+                docker compose -f docker/docker-compose.yml run --rm app
             - run: ls -laR
