@@ -10,9 +10,6 @@ services:
         - type: bind
           source: .
           target: /shared_1
-        - type: bind
-          source: /__w/test-actions/test-actions
-          target: /shaerd_2
 
       #- ../test/test-conf-file.conf:/opt/test/test-conf-file.conf
     command: 
@@ -20,4 +17,3 @@ services:
         - -c
         - |
           ls -laR /shared_1
-          ls -laR /shared_2
