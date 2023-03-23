@@ -14,5 +14,5 @@ jobs:
                 echo $USER
                 apk add curl
                 apk add wget
-                docker compose -f docker-compose.yml -f docker-compose-app.yml up --attach app --exit-code-from app
+                docker compose -f docker-compose.yml up --attach app --exit-code-from app
             - run: ls -laR

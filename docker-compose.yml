@@ -1,9 +1,24 @@
 version: '3.8'
 
-#volumes:
-#  redis-data:
-#    null
 services:
-
-volumes:
-  kafka-data:
+  app:
+    image: scr.svc.stanford.edu/eed-public/build-image/cpp-build-image/gcc-debian:12.2.0-bullseye
+    environment:
+      WAIT_HOSTS: kafka:9092
+    working_dir: /opt
+    volumes:
+      - ./shared:/opt
+      #- ../test/test-conf-file.conf:/opt/test/test-conf-file.conf
+    command: 
+        - /bin/bash
+        - -c
+        - |
+          ls -laR /opt
+          # export PATH=$PATH:/opt/
+          # export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/local/lib:/opt/local/lib/linux-x86_64
+          # /opt/local/bin/wait
+          # /opt/local/bin/ekg-test
+        
+    depends_on:
+      - epics
+      - kafka
