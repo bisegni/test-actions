@@ -5,10 +5,8 @@ on:
 jobs:
     test_build:
         runs-on: ubuntu-latest
-        container: 
-            image: docker:23.0.0-cli
-            volumes:
-                - /__w/test-actions/test-actions:/source
+        container: docker:23.0.0-cli
+
 
         steps:
             - uses: actions/checkout@v3
