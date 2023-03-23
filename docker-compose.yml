@@ -8,7 +8,7 @@ services:
     working_dir: /opt
     volumes:
       - ./shaerd:/shared_1:rw
-      - /__w/test-actions/test-actions/shared:/sahred_2:rw
+      - /__w/test-actions/test-actions/shared:/shared_2:rw
       #- ../test/test-conf-file.conf:/opt/test/test-conf-file.conf
     command: 
         - /bin/bash
