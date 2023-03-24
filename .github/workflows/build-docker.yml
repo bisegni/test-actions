@@ -2,7 +2,7 @@ name: Build EKG Docker Image
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
     tags:
       - "v*"
 
